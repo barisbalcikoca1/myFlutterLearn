@@ -11,6 +11,7 @@ class ButtonLearn extends StatelessWidget {
       ),
       body: Center(
         //Bu commit
+        //Deneme
         //Center yatayda MainAxixAlignment dikeyde
         child: Column(
           children: [
