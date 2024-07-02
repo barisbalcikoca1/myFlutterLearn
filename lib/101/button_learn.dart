@@ -10,7 +10,7 @@ class ButtonLearn extends StatelessWidget {
         title: const Center(child: Text("Button Learn")),
       ),
       body: Center(
-        //
+        //Bu commit
         //Center yatayda MainAxixAlignment dikeyde
         child: Column(
           children: [
