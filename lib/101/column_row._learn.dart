@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ColumnRowLearn extends StatelessWidget {
   const ColumnRowLearn({super.key});
@@ -9,22 +11,34 @@ class ColumnRowLearn extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Column and Row"),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(25),
-        child: Column(
-          children: [
-            FlutterLogo(),
-            FlutterLogo(),
-            FlutterLogo(),
-            Row(
-              children: [
-                FlutterLogo(),
-                FlutterLogo(),
-                FlutterLogo(),
-              ],
-            )
-          ],
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.greenAccent[100],
+            ),
+          ),
+          Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.black45,
+              )),
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: Colors.blueAccent,
+            ),
+          ),
+          const Expanded(
+            flex: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment
+                  .spaceEvenly, //Aralıklarının eşit derece bırakılması için kullanılır
+              children: [Text("Baris"), Text("Baris2"), Text("Baris3")],
+            ),
+          ),
+        ],
       ),
     );
   }
