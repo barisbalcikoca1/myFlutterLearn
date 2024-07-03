@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/101/statefull.dart';
+import 'package:flutter_learn/101/page_view_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
               centerTitle:
                   true), //bu uygulamada oluşcak tüm app barlar ortadan başlayacak default false Android için
         ),
-        home: const StatefullLearn());
+        home: const PageViewLearn());
   }
 }
