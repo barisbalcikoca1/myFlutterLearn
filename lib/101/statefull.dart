@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/product/language/language_items.dart';
 
-class StatfulLearn extends StatefulWidget {
-  const StatfulLearn({super.key});
+class StatefullLearn extends StatefulWidget {
+  const StatefullLearn({super.key});
+
+  //Dışarısı ile haberleşilen bir durum
 
   @override
-  State<StatfulLearn> createState() => _StatfulLearnState();
+  State<StatefullLearn> createState() => _StatefullLearnState();
 }
 
-class _StatfulLearnState extends State<StatfulLearn> {
+class _StatefullLearnState extends State<StatefullLearn> {
+  //Asıl çalıştırılan kısım
   int _countValue = 0;
 
   int _counterCustom = 0;
+
+  final String _merhabaText = LanguageItems.merhabaText;
 
   void _updateValue(bool isIncrenment) {
     if (isIncrenment) {
@@ -49,7 +55,7 @@ class _StatfulLearnState extends State<StatfulLearn> {
                   _counterCustom++;
                 });
               },
-              child: Text("Merhaba $_counterCustom"))
+              child: Text("$_merhabaText $_counterCustom"))
         ],
       ),
     );
