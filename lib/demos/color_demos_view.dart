@@ -7,7 +7,7 @@ class ColorDemosView extends StatefulWidget {
 }
 
 class _ColorDemosViewState extends State<ColorDemosView> {
-  Color? _backgroundColor = Colors.transparent;
+  Color? _backgroundColor;
   String? _textColorName;
   void changeBackgroundColor(Color color, String colorName) {
     setState(() {
@@ -18,7 +18,11 @@ class _ColorDemosViewState extends State<ColorDemosView> {
 
   @override
   void initState() {
+    //bunu yapmazsam null gelmektedir.
+    _backgroundColor ??= Colors.transparent;
+    _textColorName ??= "Boş";
     super.initState();
+    //debug yapmak gibi bir durum
   }
 
   @override

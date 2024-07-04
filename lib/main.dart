@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/101/list_view_learn.dart';
 import 'package:flutter_learn/demos/color_demos_view.dart';
 
 void main() {
@@ -24,6 +25,6 @@ class MyApp extends StatelessWidget {
               centerTitle:
                   true), //bu uygulamada oluşcak tüm app barlar ortadan başlayacak default false Android için
         ),
-        home: const ColorDemosView());
+        home: const ListViewLearn());
   }
 }
