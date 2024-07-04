@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/101/statefull_life_cycle_learn.dart';
+import 'package:flutter_learn/101/text_field_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +24,6 @@ class MyApp extends StatelessWidget {
               centerTitle:
                   true), //bu uygulamada oluşcak tüm app barlar ortadan başlayacak default false Android için
         ),
-        home: const StatefullLifeCycleLearn(
-          messages: "Barış",
-        ));
+        home: const TextFieldLearn());
   }
 }

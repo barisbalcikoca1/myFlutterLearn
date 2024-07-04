@@ -28,6 +28,14 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
   }
 
   @override
+  void dispose() {
+    //Bu sayfadan çıkıldığı anı söyler. Mesela sayfalar arasında geçiş yaparken bu sayfadan diğer sayfaya geçiş yaptığımda bu olduğum sayafaya dispose koyarsam
+    //Diğer sayfaya geçmemle birlikte dispose çalışır.
+    //Sayfanın öldüğü andır.
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
