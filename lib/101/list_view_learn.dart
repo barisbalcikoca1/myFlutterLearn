@@ -11,7 +11,15 @@ class _ListViewLearnState extends State<ListViewLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Lşst View Learn")),
+      appBar: AppBar(title: const Text("List View Learn")),
+      body: ListView(
+        children: [
+          Text(
+            "Merhaba",
+            style: Theme.of(context).textTheme.,
+          )
+        ],
+      ),
     );
   }
 }
