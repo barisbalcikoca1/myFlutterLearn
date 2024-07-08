@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/101/list_view_learn.dart';
-import 'package:flutter_learn/demos/color_demos_view.dart';
 
 void main() {
   runApp(const MyApp());
