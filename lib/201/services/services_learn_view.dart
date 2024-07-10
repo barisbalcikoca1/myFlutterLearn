@@ -12,9 +12,17 @@ class ServiceLearn extends StatefulWidget {
 }
 
 class _ServiceLearnState extends State<ServiceLearn> {
-  final String path = "https://jsonplaceholder.typicode.com/posts";
+  final String _baseUrl = "https://jsonplaceholder.typicode.com/posts";
   List<PostModel>? _items;
   bool _isLoading = false;
+  late final Dio _networkManager;
+
+  @override
+  void initState() {
+    super.initState();
+    _networkManager = Dio(BaseOptions(baseUrl: _baseUrl));
+    fetchPostItems();
+  }
 
   void _changeLoading() {
     setState(() {
@@ -24,7 +32,7 @@ class _ServiceLearnState extends State<ServiceLearn> {
 
   Future<void> fetchPostItems() async {
     _changeLoading();
-    final response = await Dio().get(path);
+    final response = await _networkManager.get(_baseUrl);
 
     if (response.statusCode == HttpStatus.ok) {
       final datas = response.data;
@@ -39,12 +47,6 @@ class _ServiceLearnState extends State<ServiceLearn> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    fetchPostItems();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -53,11 +55,27 @@ class _ServiceLearnState extends State<ServiceLearn> {
       body: ListView.builder(
         itemCount: _items?.length ?? 0,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(_items?[index].title ?? ""),
-            subtitle: Text(_items?[index].body ?? ""),
-          );
+          return _PostCard(model: _items?[index]);
         },
+      ),
+    );
+  }
+}
+
+class _PostCard extends StatelessWidget {
+  const _PostCard({
+    super.key,
+    required PostModel? model,
+  }) : _model = model;
+
+  final PostModel? _model;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title: Text(_model?.title ?? ""),
+        subtitle: Text(_model?.body ?? ""),
       ),
     );
   }
