@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/201/services/services_learn_view.dart';
+import 'package:flutter_learn/201/services/services_post_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +25,6 @@ class MyApp extends StatelessWidget {
               centerTitle:
                   true), //bu uygulamada oluşcak tüm app barlar ortadan başlayacak default false Android için
         ),
-        home: const ServiceLearn());
+        home: const ServicesPostLearnView());
   }
 }
